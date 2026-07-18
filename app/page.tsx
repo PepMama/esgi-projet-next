@@ -1,4 +1,5 @@
 import CitySearch from "@/components/CitySearch";
+import FavoritesList from "@/components/FavoritesList";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -47,22 +48,7 @@ export default function Home() {
         </section>
 
         <section className={styles.favorites} id="favoris">
-          <div className={styles.sectionTitle}>
-            <div>
-              <p className={styles.eyebrow}>Accès rapide</p>
-              <h2>Mes villes favorites</h2>
-            </div>
-            <span className={styles.favoriteCount}>0 ville</span>
-          </div>
-
-          <div className={styles.emptyState}>
-            <span aria-hidden="true">☆</span>
-            <h3>Aucune ville favorite</h3>
-            <p>
-              Vos villes préférées apparaîtront ici pour consulter leur météo
-              plus rapidement.
-            </p>
-          </div>
+          <FavoritesList />
         </section>
       </main>
 

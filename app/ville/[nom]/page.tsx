@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import DailyForecast from "@/components/DailyForecast";
+import FavoriteButton from "@/components/FavoriteButton";
 import WeatherMetric from "@/components/WeatherMetric";
 import { getWeatherDescription } from "@/lib/weatherCodes";
 import styles from "./page.module.css";
@@ -126,6 +127,16 @@ export default async function WeatherPage({
             <p className={styles.updatedAt}>
               Mise à jour à {formatHour(current.time)}
             </p>
+            <FavoriteButton
+              city={{
+                id: `${latitude},${longitude}`,
+                name: nom,
+                country: query.country ?? "",
+                latitude,
+                longitude,
+                timezone: query.timezone,
+              }}
+            />
           </div>
 
           <div className={styles.mainCondition}>
