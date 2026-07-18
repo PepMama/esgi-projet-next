@@ -113,9 +113,12 @@ export default async function WeatherPage({
           <span>☀️</span>
           Météo App
         </Link>
-        <Link className={styles.backLink} href="/">
-          ← Nouvelle recherche
-        </Link>
+        <div className={styles.headerLinks}>
+          <Link href="/comparaison">Comparer</Link>
+          <Link className={styles.backLink} href="/">
+            ← Nouvelle recherche
+          </Link>
+        </div>
       </header>
 
       <main className={styles.main}>

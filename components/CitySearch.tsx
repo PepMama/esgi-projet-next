@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./CitySearch.module.css";
 
-type City = {
+export type City = {
   id: number;
   name: string;
   latitude: number;
@@ -18,8 +18,19 @@ type GeocodingResponse = {
   results?: City[];
 };
 
-export default function CitySearch() {
+type CitySearchProps = {
+  label?: string;
+  placeholder?: string;
+  onSelect?: (city: City) => void;
+};
+
+export default function CitySearch({
+  label = "Rechercher une ville",
+  placeholder = "Exemple : Paris, Lyon, Marseille...",
+  onSelect,
+}: CitySearchProps) {
   const router = useRouter();
+  const inputId = useId();
   const [query, setQuery] = useState("");
   const [cities, setCities] = useState<City[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -73,6 +84,13 @@ export default function CitySearch() {
   }, [trimmedQuery]);
 
   function selectCity(city: City) {
+    if (onSelect) {
+      setQuery(city.name);
+      setCities([]);
+      onSelect(city);
+      return;
+    }
+
     const parameters = new URLSearchParams({
       latitude: city.latitude.toString(),
       longitude: city.longitude.toString(),
@@ -94,20 +112,20 @@ export default function CitySearch() {
     trimmedQuery.length >= 3 && !isLoading && !error && cities.length === 0;
 
   return (
-    <div className={styles.searchBox} id="recherche">
-      <label htmlFor="city-search">Rechercher une ville</label>
+    <div className={styles.searchBox}>
+      <label htmlFor={inputId}>{label}</label>
 
       <div className={styles.searchRow}>
         <span className={styles.searchIcon} aria-hidden="true">
           🔍
         </span>
         <input
-          id="city-search"
+          id={inputId}
           name="city"
           type="search"
           value={query}
           onChange={(event) => updateQuery(event.target.value)}
-          placeholder="Exemple : Paris, Lyon, Marseille..."
+          placeholder={placeholder}
           autoComplete="off"
           aria-describedby="search-help"
         />

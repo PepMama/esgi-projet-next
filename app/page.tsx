@@ -14,6 +14,7 @@ export default function Home() {
         <nav className={styles.navigation} aria-label="Navigation principale">
           <a href="#recherche">Rechercher</a>
           <a href="#favoris">Mes favoris</a>
+          <a href="/comparaison">Comparer</a>
         </nav>
       </header>
 
@@ -27,7 +28,9 @@ export default function Home() {
               prévisions des prochains jours.
             </p>
 
-            <CitySearch />
+            <div id="recherche">
+              <CitySearch />
+            </div>
           </div>
 
           <div className={styles.weatherCard} aria-hidden="true">
