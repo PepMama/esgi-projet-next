@@ -1,0 +1,33 @@
+.card {
+  min-height: 112px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #dbe7f0;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(37, 93, 138, 0.06);
+}
+
+.icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: none;
+  place-items: center;
+  background: #edf7ff;
+  border-radius: 13px;
+  font-size: 23px;
+}
+
+.card p {
+  margin-bottom: 5px;
+  color: #71899b;
+  font-size: 13px;
+}
+
+.card strong {
+  color: #294b67;
+  font-size: 19px;
+}
