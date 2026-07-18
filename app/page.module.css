@@ -90,70 +90,6 @@
   line-height: 1.65;
 }
 
-.searchBox {
-  margin-top: 36px;
-}
-
-.searchBox label {
-  display: block;
-  margin-bottom: 10px;
-  color: #294b67;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.searchRow {
-  min-height: 62px;
-  padding: 7px 7px 7px 18px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #ffffff;
-  border: 1px solid #d3e2ee;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(37, 93, 138, 0.1);
-}
-
-.searchIcon {
-  font-size: 18px;
-}
-
-.searchRow input {
-  min-width: 0;
-  flex: 1;
-  color: #17324d;
-  background: transparent;
-  border: 0;
-  outline: none;
-  font: inherit;
-}
-
-.searchRow input::placeholder {
-  color: #91a6b6;
-}
-
-.searchRow button {
-  align-self: stretch;
-  padding: 0 24px;
-  color: #ffffff;
-  background: #1674c5;
-  border: 0;
-  border-radius: 11px;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.searchRow button:hover {
-  background: #0d65ac;
-}
-
-.searchBox > p {
-  margin: 10px 4px 0;
-  color: #7890a3;
-  font-size: 13px;
-}
-
 .weatherCard {
   width: 100%;
   max-width: 360px;
@@ -322,15 +258,6 @@
 
   .introduction {
     font-size: 16px;
-  }
-
-  .searchRow {
-    padding-right: 7px;
-  }
-
-  .searchRow button {
-    padding: 0 14px;
-    font-size: 13px;
   }
 
   .weatherCard {

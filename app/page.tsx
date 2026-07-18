@@ -1,3 +1,4 @@
+import CitySearch from "@/components/CitySearch";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -25,22 +26,7 @@ export default function Home() {
               prévisions des prochains jours.
             </p>
 
-            <div className={styles.searchBox} id="recherche">
-              <label htmlFor="city">Rechercher une ville</label>
-              <div className={styles.searchRow}>
-                <span className={styles.searchIcon} aria-hidden="true">
-                  🔍
-                </span>
-                <input
-                  id="city"
-                  name="city"
-                  type="search"
-                  placeholder="Exemple : Paris, Lyon, Marseille..."
-                />
-                <button type="button">Rechercher</button>
-              </div>
-              <p>La recherche sera disponible à la prochaine phase.</p>
-            </div>
+            <CitySearch />
           </div>
 
           <div className={styles.weatherCard} aria-hidden="true">
