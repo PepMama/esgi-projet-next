@@ -141,6 +141,11 @@
   cursor: pointer;
 }
 
+.card > button:hover {
+  color: #ffffff;
+  background: #d39212;
+}
+
 @media (max-width: 850px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

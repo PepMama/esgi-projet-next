@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Météo App",
+  title: {
+    default: "Météo App",
+    template: "%s | Météo App",
+  },
   description: "Consultez la météo et les prévisions de vos villes favorites.",
 };
 
