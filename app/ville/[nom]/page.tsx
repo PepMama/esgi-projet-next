@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import DailyForecast from "@/components/DailyForecast";
 import WeatherMetric from "@/components/WeatherMetric";
 import { getWeatherDescription } from "@/lib/weatherCodes";
 import styles from "./page.module.css";
@@ -34,6 +35,10 @@ type WeatherData = {
     wind_speed_10m: string;
   };
   daily: {
+    time: string[];
+    weather_code: number[];
+    temperature_2m_min: number[];
+    temperature_2m_max: number[];
     sunrise: string[];
     sunset: string[];
     uv_index_max: number[];
@@ -54,9 +59,10 @@ async function getWeather(
     longitude: longitude.toString(),
     current:
       "temperature_2m,apparent_temperature,relative_humidity_2m,pressure_msl,wind_speed_10m,weather_code,is_day,uv_index",
-    daily: "sunrise,sunset,uv_index_max",
+    daily:
+      "weather_code,temperature_2m_min,temperature_2m_max,sunrise,sunset,uv_index_max",
     timezone,
-    forecast_days: "1",
+    forecast_days: "7",
   });
 
   const response = await fetch(
@@ -205,12 +211,30 @@ export default async function WeatherPage({
           </div>
         </section>
 
-        <section className={styles.forecastPreview}>
-          <div>
-            <p>À venir</p>
-            <h2>Prévisions sur 7 jours</h2>
+        <section className={styles.forecast} aria-labelledby="forecast-title">
+          <div className={styles.forecastTitle}>
+            <div>
+              <p>Cette semaine</p>
+              <h2 id="forecast-title">Prévisions sur 7 jours</h2>
+            </div>
+            <div className={styles.legend}>
+              <span>● Maximum</span>
+              <span>● Minimum</span>
+            </div>
           </div>
-          <span>Disponibles à la phase suivante →</span>
+
+          <div className={styles.forecastGrid}>
+            {weather.daily.time.map((date, index) => (
+              <DailyForecast
+                key={date}
+                date={date}
+                weatherCode={weather.daily.weather_code[index]}
+                minimumTemperature={weather.daily.temperature_2m_min[index]}
+                maximumTemperature={weather.daily.temperature_2m_max[index]}
+                isToday={index === 0}
+              />
+            ))}
+          </div>
         </section>
       </main>
 

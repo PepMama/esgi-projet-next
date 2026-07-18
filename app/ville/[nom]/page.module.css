@@ -129,7 +129,7 @@
 }
 
 .sectionTitle > div > p,
-.forecastPreview > div > p {
+.forecastTitle > div > p {
   margin-bottom: 8px;
   color: #1674c5;
   font-size: 12px;
@@ -140,7 +140,7 @@
 
 .sectionTitle h2,
 .sunSection h2,
-.forecastPreview h2 {
+.forecastTitle h2 {
   color: #12304b;
   font-size: 28px;
 }
@@ -211,20 +211,37 @@
   font-size: 20px;
 }
 
-.forecastPreview {
-  margin-top: 24px;
-  padding: 28px 32px;
+.forecast {
+  padding-top: 72px;
+}
+
+.forecastTitle {
+  margin-bottom: 26px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background: #e7f3fc;
-  border-radius: 18px;
 }
 
-.forecastPreview span {
-  color: #52758f;
-  font-size: 14px;
+.legend {
+  display: flex;
+  gap: 18px;
+  color: #71899b;
+  font-size: 12px;
+}
+
+.legend span:first-child {
+  color: #e27635;
+}
+
+.legend span:last-child {
+  color: #4489c0;
+}
+
+.forecastGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
 }
 
 .footer {
@@ -248,6 +265,10 @@
   .sunSection {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .forecastGrid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -316,8 +337,16 @@
     padding: 15px 8px;
   }
 
-  .forecastPreview {
+  .forecast {
+    padding-top: 55px;
+  }
+
+  .forecastTitle {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .forecastGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
