@@ -1,0 +1,94 @@
+.page {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  place-items: center;
+  color: #17324d;
+  background:
+    radial-gradient(circle at 50% 20%, #dcefff 0, transparent 35%),
+    #f4f8fc;
+}
+
+.card {
+  width: min(540px, 100%);
+  padding: 48px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #dbe7f0;
+  border-radius: 26px;
+  box-shadow: 0 18px 45px rgba(37, 93, 138, 0.1);
+}
+
+.icon {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 58px;
+}
+
+.eyebrow {
+  margin-bottom: 9px;
+  color: #1674c5;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.card h1 {
+  color: #12304b;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.description {
+  margin-top: 16px;
+  color: #71899b;
+  line-height: 1.65;
+}
+
+.actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.actions button,
+.actions a {
+  padding: 12px 18px;
+  border-radius: 11px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.actions button {
+  color: #ffffff;
+  background: #1674c5;
+  border: 1px solid #1674c5;
+}
+
+.actions a {
+  color: #294b67;
+  background: #ffffff;
+  border: 1px solid #cbdce8;
+}
+
+@media (max-width: 500px) {
+  .page {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 36px 22px;
+  }
+
+  .card h1 {
+    font-size: 27px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,53 @@
+.page {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  place-items: center;
+  color: #17324d;
+  background:
+    radial-gradient(circle at 50% 25%, #dcefff 0, transparent 32%),
+    #f4f8fc;
+}
+
+.content {
+  max-width: 560px;
+  text-align: center;
+}
+
+.weatherIcon {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 70px;
+}
+
+.code {
+  margin-bottom: 10px;
+  color: #1674c5;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.content h1 {
+  color: #12304b;
+  font-size: clamp(36px, 7vw, 54px);
+  letter-spacing: -2px;
+}
+
+.content > p:last-of-type {
+  max-width: 500px;
+  margin: 18px auto 30px;
+  color: #71899b;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.content a {
+  display: inline-block;
+  padding: 14px 20px;
+  color: #ffffff;
+  background: #1674c5;
+  border-radius: 12px;
+  font-weight: 700;
+}
